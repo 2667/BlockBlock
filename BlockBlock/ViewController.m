@@ -39,12 +39,19 @@
 - (IBAction)exchangeValue:(id)sender
 {
     BlockPassByValueVC * BlockPVc = [[BlockPassByValueVC alloc] init];
+//    void(^blockName)(NSString*) = ^(NSString* name) {
+//
+//    };
     
+//    blockName(@"");
     /**
      passValueBlock 是 BlockPVc 这样控制器里的 block
      valueStr 为 BlockPVc 控制器要传递过来的参数
      {}括号里的代码是在BlockPVc的.m文件里传了参数运行block的时候才会调用
      */
+    BlockPVc.passValueBlock = ^(NSString *valueStr) {
+        
+    };
     BlockPVc.passValueBlock = ^(NSString *valueStr) {
         NSLog(@"传过来的值 = %@",valueStr);
     };
